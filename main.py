@@ -21,3 +21,9 @@ import seaborn as sns
 
 # Creating a data frame
 data = pd.read_csv("titanic.csv")
+data.info()
+# Seeing if you need to clean the data
+print(data.isnull().sum())
+# Machine learning model only understands numbers
+
+# DATA CLEANING
