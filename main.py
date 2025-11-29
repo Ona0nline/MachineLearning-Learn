@@ -26,4 +26,12 @@ data.info()
 print(data.isnull().sum())
 # Machine learning model only understands numbers
 
-# DATA CLEANING
+# DATA CLEANING AND FEATURE ENGINEERING (Adding new coloums to enhance model)
+def preprocess_data(data_frame):
+  # Removing irrelevant data
+  data_frame.drop(columns=["PassengerId", "Name", "Ticket", "Cabin", "Embarked"], inplace=True)
+  
+  # Convert gender
+  data_frame["Sex"] = data_frame["Sex"].map({'male':1, 'female':0})
+  
+  
